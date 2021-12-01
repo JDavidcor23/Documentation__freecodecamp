@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Documentation</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>React Router Tutorial</header>
+        <ul>
+            <a href="#introduction"><li>Introduction</li></a>
+            <a href="#installation"><li>installation</li></a>
+            <a href="#Connect_the_url"><li>Connect the URL</li></a>
+            <a href="#add_some_links"><li>Add Some Links</li></a>
+            <a href="#add_some_routes"><li>Add Some Routes</li></a>
+            <a href="#learn_more"><li>Learn more</li></a>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="introduction">
+            <header>Introduction</header>
+            <p>React Router is a fully-featured client and server-side routing library for React, a JavaScript library for building user interfaces. React Router runs anywhere React runs; on the web, on the server with node.js, and on React Native.
+            </p>
+            <p>If you're just getting started with React generally, we recommend you follow the excellent Getting Started guide in the official docs. There is plenty of information there to get you up and running. React Router is compatible with React >= 16.8.</p>
+            <p>We'll keep this tutorial quick and to the point. By the end you'll know the APIs you deal with day-to-day with React Router. After that, you can dig into some of the other docs to get a deeper understanding.</p>
+            <p>While building a little bookkeeping app we'll cover:</p>
+            <ul>
+                <li>Configuring Routes</li>
+                <li>Navigating with Link</li>
+                <li>Creating Links with active styling</li>
+                <li>Using Nested Routes for Layout</li>
+                <li>Navigating programmatically</li>
+                <li>Using URL params for data loading</li>
+                <li>Using URL Search params</li>
+                <li>Creating your own behaviors through composition</li>
+                <li>Server Rendering</li>
+            </ul>
+                
+        </section>
+        <section class="main-section" id="installation">
+            <header>Installation</header>
+            <h2>Using a bundler</h2>
+            <p>Feel free to use your bundler of choice like Create React App or Vite.</p>
+            <p class="commit"># create react app</p>
+            <div class="code">
+                <p>npx create-react-app router-tutorial</p>
+            </div>
+            <p class="commit"># vite</p>
+            <div class="code">
+                <p>
+                    npm init vite@latest router-tutorial --template react
+                </p>
+            </div>
+            <p>Then install React Router dependencies:</p>
+            <div class="code">
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/1_xzpadm.png" alt="">
+            </div>
+            <p class="commit">src/App.js</p>
+            <div class="code">
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/2_yl4cdk.png" alt="">
+            </div>
+            <p>Actually, that "!" doesn't look boring at all. This is pretty exciting. We sat on React Router v6 beta for over a year as we shifted gears with our business after a global pandemic. THIS IS THE MOST EXCITING THING WE'VE DONE IN A WHILE!</p>
+            <p>Finally, go make sure index.js or main.jsx (depending on the bundler you used) is actually boring:</p>        
+            <div class="code">
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/3_wroe3q.png" alt="">
+            </div>
+            <p>Finally start your app:</p>
+            <div class="code">
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/4_sd6hg5.png" alt="">
+            </div>
+        </section>
+        <section class="main-section" id="Connect_the_url">
+            <header>Connect the URL</header>
+            <p>First things first, we want to connect your app to the browser's URL: import BrowserRouter and render it around your whole app.</p>
+            <div class="code">
+
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/5_vcbf26.png" alt="">
+            </div>
+            <p>Nothing changes in your app, but now we're ready to start messing with the URL.</p>
+        </section>
+        <section class="main-section" id="add_some_links">
+            <header>
+                Add Some Links
+            </header>
+           <p> Open up src/App.js, import Link and add some global navigation. Side note: don't take the styling too seriously in this tutorial, we're just using inline styles for convenience, style your apps however you want.</p>
+           <div class="code">
+               <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/6_catta5.png" alt="">
+
+           </div>
+           <p>Go ahead and click the links and the back/forward button (if you're using StackBlitz, you'll need to click the "Open in New Window" button in the inline-browser's toolbar). React Router is now controlling the URL!</p>
+           <p>We don't have any routes that render when the URL changes yet, but Link is changing the URL without causing a full page reload.</p>
+        </section>
+        <section class="main-section" id="add_some_routes">
+            <header>
+                Add Some Routes
+            </header>
+            <p>Add a couple new files:</p>
+            <ul>
+                <li>src/routes/invoices.jsx</li>
+                <li>src/routes/expenses.jsx</li>
+            </ul>
+            <p>(The location of the files doesn't matter, but when you decide you'd like an automatic backend API, server rendering, code splitting bundler and more for this app, naming your files like this way makes it easy to port this app to our other project, <a href="https://remix.run">Remix</a> 😉)</p>
+            <p>Now fill 'em up with some code:</p>
+            <div class="code">
+
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/7_snyl1r.png" alt="">
+            </div>
+            <div class="code">
+
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/8_id5v4a.png" alt="">
+            </div>
+            <p>Finally, let's teach React Router how to render our app at different URLs by creating our first "Route Config" inside of main.jsx.</p>
+            <div class="code">
+
+                <img src="https://res.cloudinary.com/dbtk64lp4/image/upload/v1638398979/documentation/9_qxwf0f.png" alt="">
+            </div>
+            <p>Notice at "/" it renders <App>. At "/invoices" it render <Invoices>. Nice work!</p>
+        </section>
+        <section class="main-section" id="learn_more">
+            <header>
+                Learn more <a href="https://reactrouter.com/docs/en/v6/getting-started/tutorial">here</a>
+            </header>
+        </section>
+    </main>
+</body>
+</html>
